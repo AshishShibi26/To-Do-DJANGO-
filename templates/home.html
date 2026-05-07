@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>This is a demo site</div>
+    <form action="" method = "POST">
+        {% csrf_token%}
+        <input type="text" placeholder="Enter your name" name = 'title'>
+        <input type="text" placeholder="Enter your description" name = 'description'>
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        {%for i in tasks%}
+        <h1>{{i.title}}</h1>
+        <p>{{i.description}}</p>
+        {%endfor%}
+    </div>
+</body>
+</html>
