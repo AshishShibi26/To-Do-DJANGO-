@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,364 +11,306 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        body{
-            font-family:'Poppins',sans-serif;
-            background:#f1f5f9;
-            min-height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            padding:30px;
-            color:#1e293b;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            color: #1e293b;
         }
 
-        .container{
-            width:100%;
-            max-width:850px;
-            background:white;
-            border-radius:24px;
-            padding:35px;
-            box-shadow:0 10px 35px rgba(0,0,0,0.08);
-            position:relative;
+        .container {
+            width: 100%;
+            max-width: 850px;
+            background: white;
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+            position: relative;
         }
 
         /* ADMIN BUTTON */
 
-        .admin-link{
-            position:absolute;
-            top:30px;
-            right:30px;
-            text-decoration:none;
-            background:#2563eb;
-            color:white;
-            padding:10px 18px;
-            border-radius:12px;
-            font-size:14px;
-            font-weight:500;
-            transition:0.3s;
+        .admin-link {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
         }
 
-        .admin-link:hover{
-            background:#1d4ed8;
-            transform:translateY(-2px);
+        .admin-link:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
         }
 
         /* HEADER */
 
-        .heading{
-            text-align:center;
-            margin-bottom:35px;
+        .heading {
+            text-align: center;
+            margin-bottom: 35px;
         }
 
-        .heading h1{
-            font-size:44px;
-            margin-bottom:10px;
-            color:#0f172a;
+        .heading h1 {
+            font-size: 44px;
+            margin-bottom: 10px;
+            color: #0f172a;
         }
 
-        .heading p{
-            color:#64748b;
-            font-size:15px;
+        .heading p {
+            color: #64748b;
+            font-size: 15px;
         }
 
-        .icon{
-            color:#2563eb;
-            margin-right:8px;
+        .icon {
+            color: #2563eb;
+            margin-right: 8px;
         }
 
         /* FORM */
 
-        form{
-            display:flex;
-            gap:15px;
-            margin-bottom:35px;
-            flex-wrap:wrap;
+        form {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
         }
 
-        input{
-            flex:1;
-            min-width:220px;
-            padding:15px;
-            border:none;
-            outline:none;
-            border-radius:14px;
-            background:#f1f5f9;
-            color:#1e293b;
-            font-size:15px;
-            border:2px solid transparent;
-            transition:0.3s;
+        input {
+            flex: 1;
+            min-width: 220px;
+            padding: 15px;
+            border: none;
+            outline: none;
+            border-radius: 14px;
+            background: #f1f5f9;
+            color: #1e293b;
+            font-size: 15px;
+            border: 2px solid transparent;
+            transition: 0.3s;
         }
 
-        input:focus{
-            border-color:#2563eb;
-            background:white;
+        input:focus {
+            border-color: #2563eb;
+            background: white;
         }
 
-        input::placeholder{
-            color:#94a3b8;
+        input::placeholder {
+            color: #94a3b8;
         }
 
-        button{
-            border:none;
-            cursor:pointer;
-            transition:0.3s;
-            color:white;
-            font-weight:500;
+        button {
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            color: white;
+            font-weight: 500;
         }
 
-        .add-btn{
-            padding:15px 24px;
-            border-radius:14px;
-            background:#2563eb;
-            font-size:15px;
+        .add-btn {
+            padding: 15px 24px;
+            border-radius: 14px;
+            background: #2563eb;
+            font-size: 15px;
         }
 
-        .add-btn:hover{
-            background:#1d4ed8;
-            transform:translateY(-2px);
+        .add-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
         }
 
         /* TASK CONTAINER */
 
-        .task-container{
-            display:flex;
-            flex-direction:column;
-            gap:20px;
+        .task-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
         /* TASK CARD */
 
-        .task-card{
-            background:#f8fafc;
-            padding:24px;
-            border-radius:18px;
-            border-left:5px solid #2563eb;
-            transition:0.3s;
-            box-shadow:0 4px 12px rgba(0,0,0,0.04);
+        .task-card {
+            background: #f8fafc;
+            padding: 24px;
+            border-radius: 18px;
+            border-left: 5px solid #2563eb;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
 
-        .task-card:hover{
-            transform:translateY(-4px);
-            background:white;
-            box-shadow:0 8px 20px rgba(0,0,0,0.08);
+        .task-card:hover {
+            transform: translateY(-4px);
+            background: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .task-top{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            gap:20px;
+        .task-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
         }
 
-        .task-card h2{
-            margin-bottom:8px;
-            font-size:24px;
-            color:#0f172a;
+        .task-card h2 {
+            margin-bottom: 8px;
+            font-size: 24px;
+            color: #0f172a;
         }
 
-        .task-card p{
-            color:#64748b;
-            line-height:1.6;
+        .task-card p {
+            color: #64748b;
+            line-height: 1.6;
         }
 
         /* ACTION BUTTONS */
 
-        .task-actions{
-            display:flex;
-            gap:10px;
+        .task-actions {
+            display: flex;
+            gap: 10px;
         }
 
-        .edit-btn{
-            background:#f59e0b;
-            padding:10px 14px;
-            border-radius:10px;
+        .edit-btn {
+            background: #f59e0b;
+            padding: 10px 14px;
+            border-radius: 10px;
         }
 
-        .edit-btn:hover{
-            background:#d97706;
-            transform:scale(1.05);
+        .edit-btn:hover {
+            background: #d97706;
+            transform: scale(1.05);
         }
 
-        .delete-btn{
-            background:#ef4444;
-            padding:10px 14px;
-            border-radius:10px;
+        .delete-btn {
+            background: #ef4444;
+            padding: 10px 14px;
+            border-radius: 10px;
         }
 
-        .delete-btn:hover{
-            background:#dc2626;
-            transform:scale(1.05);
+        .delete-btn:hover {
+            background: #dc2626;
+            transform: scale(1.05);
         }
 
         /* RESPONSIVE */
 
-        @media(max-width:700px){
+        @media(max-width:700px) {
 
-            form{
-                flex-direction:column;
+            form {
+                flex-direction: column;
             }
 
-            .add-btn{
-                width:100%;
+            .add-btn {
+                width: 100%;
             }
 
-            .task-top{
-                flex-direction:column;
-                align-items:flex-start;
+            .task-top {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
-            .task-actions{
-                width:100%;
+            .task-actions {
+                width: 100%;
             }
 
             .edit-btn,
-            .delete-btn{
-                flex:1;
+            .delete-btn {
+                flex: 1;
             }
 
-            .heading h1{
-                font-size:34px;
+            .heading h1 {
+                font-size: 34px;
             }
 
-            .admin-link{
-                position:static;
-                display:inline-block;
-                margin-bottom:20px;
+            .admin-link {
+                position: static;
+                display: inline-block;
+                margin-bottom: 20px;
             }
         }
-
     </style>
 
 </head>
+
 <body>
 
     <div class="container">
-
-        <!-- ADMIN BUTTON -->
-
-        <a href="/adminlogin/" class="admin-link">
-
-            <i class="fa-solid fa-user-shield"></i>
-
-            Admin
-
-        </a>
-
         <!-- HEADER -->
-
         <div class="heading">
-
             <h1>
-
                 <i class="fa-solid fa-list-check icon"></i>
-
                 To Do App
-
             </h1>
-
             <p>
-
                 Organize your daily tasks efficiently
-
             </p>
-
         </div>
-
         <!-- FORM -->
-
         <form action="" method="POST">
-
             {% csrf_token %}
-
-            <input 
-            type="text"
-            placeholder="Enter task title"
-            name="title">
-
-            <input 
-            type="text"
-            placeholder="Enter task description"
-            name="description">
-
+            <input type="text" placeholder="Enter task title" name="title">
+            <input type="text" placeholder="Enter task description" name="description">
             <button type="submit" class="add-btn">
-
                 <i class="fa-solid fa-plus"></i>
-
                 Add Task
-
             </button>
-
         </form>
-
         <!-- TASKS -->
-
         <div class="task-container">
-
             {% for i in tasks %}
-
             <div class="task-card">
-
                 <div class="task-top">
-
                     <div>
-
+                        {% if i.completed %}
                         <h2>
-
                             <i class="fa-solid fa-circle-check icon"></i>
-
-                            {{i.title}}
-
+                            <strike>{{i.title}}</strike>
                         </h2>
-
                         <p>
-
                             {{i.description}}
-
                         </p>
-
+                        {% else %}
+                        <h2>
+                            <i class="fa-solid fa-circle-check icon"></i>
+                            {{i.title}}
+                        </h2>
+                        <p>
+                            {{i.description}}
+                        </p>
+                        {% endif %}
                     </div>
-
                     <!-- ACTION BUTTONS -->
-
                     <div class="task-actions">
-
-                        <a href="">
-
+                        <a href="{% url 'update' i.id %}">
                             <button class="edit-btn">
-
                                 <i class="fa-solid fa-pen"></i>
-
                             </button>
-
                         </a>
-
-                        <a href="">
-
+                        <a href="{% url 'delete' i.id %}">
                             <button class="delete-btn">
-
                                 <i class="fa-solid fa-trash"></i>
-
                             </button>
-
                         </a>
-
                     </div>
-
                 </div>
-
             </div>
-
             {% endfor %}
 
         </div>
@@ -375,4 +318,5 @@
     </div>
 
 </body>
+
 </html>

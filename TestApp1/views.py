@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import task
 
 def index(request):
@@ -9,5 +9,13 @@ def index(request):
         task.objects.create(title=a, description=b)
     return render(request, 'home.html',{'tasks':tasks})
 
-def adminlogin(request):
-    return render(request, 'adminlogin.html')
+def delete(request, id):
+    task.objects.filter(id=id).delete()
+    return redirect('/')
+
+def update(request, id):
+    tasks = task.objects.filter(id=id).first()
+    tasks.completed = not tasks.completed
+    tasks.save()
+    return redirect('/')
+    
