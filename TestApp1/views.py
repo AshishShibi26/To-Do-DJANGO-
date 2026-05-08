@@ -8,3 +8,6 @@ def index(request):
         b = request.POST.get('description')
         task.objects.create(title=a, description=b)
     return render(request, 'home.html',{'tasks':tasks})
+
+def adminlogin(request):
+    return render(request, 'adminlogin.html')
